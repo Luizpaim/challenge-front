@@ -4,7 +4,9 @@ import { defineComponent, ref, toRefs, onMounted } from 'vue'
 import Swal from 'sweetalert2'
 
 import LevelProgress from '@/components/LevelProgress.vue'
+
 import CardProgress from '@/components/CardProgress.vue'
+
 import contentsHardcode from '@/utils/contents-hardcode'
 
 import { useContentStore } from '@/store/content'

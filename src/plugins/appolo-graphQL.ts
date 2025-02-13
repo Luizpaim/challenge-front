@@ -1,8 +1,13 @@
 import { Plugin } from '@nuxt/types'
+
 import { ApolloClient } from 'apollo-client'
+
 import { InMemoryCache } from 'apollo-cache-inmemory'
+
 import { HttpLink } from 'apollo-link-http'
+
 import { setContext } from 'apollo-link-context'
+
 import { setApolloClient } from '@/services/apollo-instance.service'
 
 const apolloPlugin: Plugin = ({ app }, inject) => {

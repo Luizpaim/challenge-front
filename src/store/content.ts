@@ -10,6 +10,7 @@ export const useContentStore = defineStore('contents', () => {
 
   const loadByIdContent = async (contentId: string): Promise<boolean> => {
     loading.value = true
+
     try {
       const { provision } = await findByIdContent(contentId)
 

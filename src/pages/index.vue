@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue'
 
 import ContentPlayer from '@/components/ContentPlayer.vue'
+
 import ContainerPage from '@/components/ContainerPage.vue'
 
 export default defineComponent({
