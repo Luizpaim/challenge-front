@@ -3,7 +3,7 @@ import { defineComponent, toRefs, computed } from 'vue'
 
 import TypeContentPlayerIcon from '@/utils/content-player-icon'
 
-import useContentStore from '@/store/content.store'
+import useContentStore from '@/store/content'
 
 export default defineComponent({
   name: 'TitlePage',
@@ -42,8 +42,16 @@ export default defineComponent({
   align-items: center;
   gap: 20px;
   h1 {
+    font-size: 26px;
     font-weight: 500;
     color: #333333;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    h1 {
+      font-size: 20px;
+    }
   }
 }
 </style>

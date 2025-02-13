@@ -11,13 +11,6 @@ module.exports = {
     'prettier',
   ],
   plugins: ['jest'],
-  overrides: [
-    {
-      files: ['*.spec.js'],
-      rules: {
-        'no-unused-expressions': 'off',
-      },
-    },
-  ],
-  rules: { 'vue/require-default-prop': 'off' },
+  // add your custom rules here
+  rules: {},
 }

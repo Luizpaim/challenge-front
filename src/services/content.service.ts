@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag'
+import { parse } from 'graphql'
 import { getApolloClient } from './apollo-instance.service'
 
 export type Content = {
@@ -28,25 +28,25 @@ export const findByIdContent = async (
 
   try {
     const { data } = await apolloClient.query<ServiceContentResponse>({
-      query: gql`
-        query {
-          provision(content_id: "${contentId}") {
-            id
-            title
-            type
-            description
-            cover
-            url
-            created_at
-            allow_download
-            is_embeddable
-            format
-            bytes
-            total_likes
-            metadata
+      query: parse(`
+          query {
+            provision(content_id: "${contentId}") {
+              id
+              title
+              type
+              description
+              cover
+              url
+              created_at
+              allow_download
+              is_embeddable
+              format
+              bytes
+              total_likes
+              metadata
+            }
           }
-        }
-      `,
+        `),
     })
 
     return data.provision

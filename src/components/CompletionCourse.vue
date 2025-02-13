@@ -7,7 +7,7 @@ import CardProgress from './CardProgress.vue'
 
 import contentsHardcode from '@/utils/contents-hardcode'
 
-import useContentStore from '@/store/content.store'
+import useContentStore from '@/store/content'
 
 export default defineComponent({
   components: {
@@ -46,12 +46,12 @@ export default defineComponent({
         },
         bary: 'surface-300 opacity-100 border-noround',
       }"
-      style="padding: 0; gap: 20px; width: 100%; height: 350px"
+      style="padding: 0; gap: 20px; width: 100%; height: 500px"
     >
       <div
         v-for="item in contents"
         :key="item.id"
-        @click="loadByIdContent(item.id)"
+        @click.stop="loadByIdContent(item.id)"
       >
         <CardProgress
           :id="item.id"
@@ -80,5 +80,10 @@ export default defineComponent({
 
 .content-card {
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .completion-course {
+    width: 100%;
+  }
 }
 </style>

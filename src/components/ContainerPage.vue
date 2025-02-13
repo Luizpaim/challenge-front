@@ -75,4 +75,15 @@ a {
   height: 100%;
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .container-page {
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+  }
+  .sub-container {
+    width: 100%;
+  }
+}
 </style>

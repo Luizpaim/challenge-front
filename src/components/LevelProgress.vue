@@ -43,13 +43,14 @@ export default defineComponent({
 </script>
 <template>
   <div class="level-progess">
-    <span class="title">Your Study Progress</span>
+    <span class="title">Seu progresso no estudo</span>
     <div class="progress">
       <ProgressBar class="progress-bar" :value="progress" />
     </div>
     <p class="description">
-      Great Job! 🎉 You're on the path to becoming a certified Mastering
-      Illustration. Your dedication to learning is impressive. Finish strong!
+      Ótimo trabalho! 🎉 Você está no caminho certo para se tornar um Mastering
+      Illustration certificado. Sua dedicação ao aprendizado é impressionante.
+      Termine forte!
     </p>
   </div>
 </template>
@@ -59,7 +60,7 @@ export default defineComponent({
   background-color: #003366 !important;
 }
 .description {
-  font-size: 18px;
+  font-size: 16px;
   color: #555555;
 }
 .level-progess {
@@ -78,5 +79,17 @@ export default defineComponent({
   font-size: 20px;
   font-weight: 500;
   color: #333333;
+}
+
+@media (max-width: 768px) {
+  .level-progess {
+    padding: 20px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .description {
+    font-size: 16px;
+  }
 }
 </style>

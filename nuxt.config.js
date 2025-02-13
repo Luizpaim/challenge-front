@@ -26,15 +26,15 @@ export default {
 
   css: ['primeflex/primeflex.css'],
 
-  plugins: ['@/plugins/appolo-graphQL.ts', '@/plugins/primevue.ts'],
+  plugins: [
+    '@/plugins/appolo-graphQL.ts',
+    '@/plugins/primevue.ts',
+    '@/plugins/pinia.ts',
+  ],
 
   components: true,
 
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/composition-api/module',
-    '@pinia/nuxt',
-  ],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
 
   modules: ['primevue/nuxt', '@nuxtjs/apollo'],
   apollo: {

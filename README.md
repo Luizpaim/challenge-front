@@ -1,4 +1,4 @@
-# challenge-front
+# front
 
 ## Build Setup
 

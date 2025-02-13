@@ -9,8 +9,6 @@ export default defineComponent({
     ContainerPage,
     ContentPlayer,
   },
-
-  setup() {},
 })
 </script>
 

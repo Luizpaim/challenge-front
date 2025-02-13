@@ -4,7 +4,7 @@ import { defineComponent, toRefs } from 'vue'
 import ContentViewImage from './ContentViewImage.vue'
 import ContentViewIframe from './ContentViewIframe.vue'
 import ContentViewLink from './ContentViewLink.vue'
-import useContentStore from '@/store/content.store'
+import useContentStore from '@/store/content'
 import ContentTypeEnum from '@/utils/enums/ContentTypeEnum'
 
 export default defineComponent({
@@ -37,6 +37,8 @@ export default defineComponent({
         contentById?.type === ContentTypeEnum.TXT
       "
       :url="contentById?.url"
+      :type="contentById?.type"
+      :description="contentById?.description"
     />
     <ContentViewLink
       v-if="contentById?.type === ContentTypeEnum.LINK"
@@ -49,7 +51,7 @@ export default defineComponent({
 .content-player {
   border-radius: 12px;
   width: 100%;
-  height: 482px;
+  height: 100%;
   padding: 10px;
   background: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
