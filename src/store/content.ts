@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 import { findByIdContent, Content } from '@/services/content.service'
+
 export const useContentStore = defineStore('contents', () => {
   const contentById = ref<Content | null>(null)
 
@@ -11,7 +12,9 @@ export const useContentStore = defineStore('contents', () => {
     loading.value = true
     try {
       const { provision } = await findByIdContent(contentId)
+
       contentById.value = provision
+
       return true
     } catch (error) {
       return false
