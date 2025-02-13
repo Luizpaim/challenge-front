@@ -20,8 +20,11 @@ export default defineConfig({
       web: [/primevue/], // Garante que PrimeVue seja transformado corretamente
     },
     coverage: {
-      provider: 'istanbul',
-      reporter: ['text', 'json', 'html'],
+      provider: 'c8', // Usa 'c8' para cobertura
+      reporter: ['text', 'json', 'html'], // Gera diferentes formatos de cobertura
+      all: true, // Garante que todos os arquivos sejam cobertos
+      include: ['components/**/*.vue', 'pages/**/*.vue', 'store/**/*.js'], // Define quais arquivos serão analisados
+      exclude: ['node_modules', 'test/**/*', '.nuxt/**/*'], // Exclui arquivos irrelevantes
     },
   },
 })
