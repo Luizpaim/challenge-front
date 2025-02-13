@@ -21,7 +21,7 @@ export default defineComponent({
     </span>
 
     <a :href="url" target="_blank">
-      <PButton link label="Acessar Link" />
+      <PButton link label="Acessar Link" class="button-link" />
     </a>
   </div>
 </template>
