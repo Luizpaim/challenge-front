@@ -6,14 +6,6 @@ import TypeContentPlayerIcon from '@/utils/content-player-icon'
 import { useContentStore } from '@/store/content'
 
 export default defineComponent({
-  name: 'TitlePage',
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-  },
-
   setup() {
     const { contentById } = toRefs(useContentStore())
 
