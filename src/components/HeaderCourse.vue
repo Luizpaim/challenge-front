@@ -1,24 +1,10 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import TitlePage from '@/components/TitlePage.vue'
 
 export default defineComponent({
   components: {
     TitlePage,
-  },
-
-  setup() {
-    const home = ref({
-      icon: 'pi pi-home',
-    })
-
-    const items = ref([
-      { label: 'My Course' },
-      { label: 'Mastering Illustration' },
-      { label: 'Course' },
-    ])
-
-    return { home, items }
   },
 })
 </script>
