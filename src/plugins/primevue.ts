@@ -10,7 +10,9 @@ import ProgressBar from 'primevue/progressbar/ProgressBar'
 import ToastService from 'primevue/toastservice/ToastService'
 import Toast from 'primevue/toast/Toast'
 import Panel from 'primevue/panel/Panel'
+import ImagePreview from 'primevue/imagepreview/ImagePreview'
 
+Vue.component('PImagePreview', ImagePreview)
 Vue.component('PPanel', Panel)
 Vue.component('PButton', Button)
 Vue.component('PCard', Card)
