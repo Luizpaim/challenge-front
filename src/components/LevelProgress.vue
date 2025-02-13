@@ -1,12 +1,7 @@
 <script lang="ts">
-import ProgressBar from 'primevue/progressbar/ProgressBar'
 import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue'
 
 export default defineComponent({
-  components: {
-    ProgressBar,
-  },
-
   setup() {
     const progress = ref(0)
 
@@ -45,7 +40,7 @@ export default defineComponent({
   <div class="level-progess">
     <span class="title">Seu progresso no estudo</span>
     <div class="progress">
-      <ProgressBar class="progress-bar" :value="progress" />
+      <PProgressBar class="progress-bar" :value="progress" />
     </div>
     <p class="description">
       Ótimo trabalho! 🎉 Você está no caminho certo para se tornar um Mastering

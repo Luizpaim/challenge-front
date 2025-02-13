@@ -1,27 +1,49 @@
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-
-import Panel from 'primevue/panel/Panel'
+import { computed } from 'vue'
 
 import TypeContentPlayerIcon from '@/utils/content-player-icon'
 
-export default defineComponent({
-  components: {
-    Panel,
-  },
+export default {
   props: {
-    id: String,
-    title: String,
-    url: String,
-    totalLikes: Number,
-    type: String,
-    cover: String,
-    companyId: String,
-    createdAt: String,
-    description: String,
+    id: {
+      type: String,
+      default: '',
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    url: {
+      type: String,
+      default: '',
+    },
+    totalLikes: {
+      type: Number,
+      default: 0,
+    },
+    type: {
+      type: String,
+      default: '',
+    },
+    cover: {
+      type: String,
+      default: '',
+    },
+    companyId: {
+      type: String,
+      default: '',
+    },
+    createdAt: {
+      type: String,
+      default: '',
+    },
+    description: {
+      type: String,
+      default: '',
+    },
   },
 
-  setup(props) {
+  setup(props: any) {
     const icon = computed(
       () =>
         TypeContentPlayerIcon[props.type as keyof typeof TypeContentPlayerIcon]
@@ -30,10 +52,10 @@ export default defineComponent({
       icon,
     }
   },
-})
+}
 </script>
 <template>
-  <Panel class="panel-content" :header="title" toggleable>
+  <PPanel class="panel-content" :header="title" toggleable>
     <template #header>
       <div class="card-progress">
         <div class="icon">
@@ -45,7 +67,7 @@ export default defineComponent({
       </div>
     </template>
     <p>{{ description }}</p>
-  </Panel>
+  </PPanel>
 </template>
 <style lang="css" scoped>
 .panel-content {

@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
+    "types": ["jest", "node"],
     "allowJs": true,
     "skipLibCheck": true,
     "moduleResolution": "node",

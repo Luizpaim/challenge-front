@@ -3,7 +3,7 @@ import { defineComponent, toRefs, computed } from 'vue'
 
 import TypeContentPlayerIcon from '@/utils/content-player-icon'
 
-import useContentStore from '@/store/content'
+import { useContentStore } from '@/store/content'
 
 export default defineComponent({
   name: 'TitlePage',
