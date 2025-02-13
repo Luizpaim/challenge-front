@@ -1,7 +1,7 @@
 # front
 
 ## Build Setup
-
+USAR O NODE v23.7.0
 ```bash
 # install dependencies
 $ npm install
