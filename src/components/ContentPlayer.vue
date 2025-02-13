@@ -5,7 +5,7 @@ import ContentViewImage from './ContentViewImage.vue'
 import ContentViewIframe from './ContentViewIframe.vue'
 import ContentViewLink from './ContentViewLink.vue'
 import { useContentStore } from '@/store/content'
-import ContentTypeEnum from '@/utils/enums/ContentTypeEnum'
+import { ContentTypeEnum } from '@/utils/enums/ContentTypeEnum'
 
 export default defineComponent({
   components: {
@@ -27,21 +27,21 @@ export default defineComponent({
 <template>
   <div class="content-player">
     <ContentViewImage
-      v-if="contentById?.type === ContentTypeEnum.IMAGE"
+      v-if="contentById?.type === ContentTypeEnum?.IMAGE"
       :url="contentById?.url"
     />
     <ContentViewIframe
       v-if="
-        contentById?.type === ContentTypeEnum.PDF ||
-        contentById?.type === ContentTypeEnum.VIDEO ||
-        contentById?.type === ContentTypeEnum.TXT
+        contentById?.type === ContentTypeEnum?.PDF ||
+        contentById?.type === ContentTypeEnum?.VIDEO ||
+        contentById?.type === ContentTypeEnum?.TXT
       "
       :url="contentById?.url"
       :type="contentById?.type"
       :description="contentById?.description"
     />
     <ContentViewLink
-      v-if="contentById?.type === ContentTypeEnum.LINK"
+      v-if="contentById?.type === ContentTypeEnum?.LINK"
       :url="contentById?.url"
       :description="contentById?.description"
     />

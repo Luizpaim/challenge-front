@@ -3,6 +3,7 @@ import { nextTick, ref } from 'vue'
 import { vi } from 'vitest'
 import TitlePage from '@/components/TitlePage.vue'
 import { useContentStore } from '@/store/content'
+
 vi.mock('@/store/content', () => {
   const contentById = ref({ title: '', type: '' })
 

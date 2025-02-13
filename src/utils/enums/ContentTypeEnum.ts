@@ -1,4 +1,4 @@
-export default {
+export const ContentTypeEnum = {
   IMAGE: 'image',
   PDF: 'pdf',
   LINK: 'link',
