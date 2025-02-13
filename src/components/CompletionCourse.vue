@@ -1,9 +1,10 @@
 <script lang="ts">
 import { defineComponent, ref, toRefs, onMounted } from 'vue'
 
+import Swal from 'sweetalert2'
+
 import LevelProgress from '@/components/LevelProgress.vue'
 import CardProgress from '@/components/CardProgress.vue'
-
 import contentsHardcode from '@/utils/contents-hardcode'
 
 import { useContentStore } from '@/store/content'
@@ -19,9 +20,24 @@ export default defineComponent({
 
     const { loadByIdContent, contentById } = toRefs(useContentStore())
 
+    const alertMessage = (title: string, text: string) =>
+      Swal.fire({
+        icon: 'error',
+        title,
+        text,
+      })
+
+    const findContent = async (contentId: string) => {
+      const isContent = await loadByIdContent.value(contentId)
+
+      if (!isContent) {
+        alertMessage('Ops...', 'Você não tem acesso a esse conteúdo.')
+      }
+    }
+
     onMounted(async () => {
       if (contents.value.length > 0) {
-        await loadByIdContent.value(contents.value[0].id)
+        await findContent(contents.value[0].id)
       }
     })
 
@@ -29,6 +45,7 @@ export default defineComponent({
       contentById,
       contents,
       loadByIdContent,
+      findContent,
     }
   },
 })
@@ -50,7 +67,7 @@ export default defineComponent({
         v-for="item in contents"
         :key="item.id"
         class="content-card"
-        @click.stop="loadByIdContent(item.id)"
+        @click.stop="findContent(item.id)"
       >
         <CardProgress
           :id="item.id"

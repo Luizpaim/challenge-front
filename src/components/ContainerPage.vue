@@ -19,6 +19,7 @@ export default defineComponent({
       <slot />
     </div>
     <CompletionCourse />
+    <ToastService />
   </div>
 </template>
 <style lang="css">

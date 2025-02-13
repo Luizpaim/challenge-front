@@ -23,34 +23,29 @@ type ServiceContentResponse = {
 
 export const findByIdContent = async (
   contentId: string
-): Promise<Content | null> => {
+): Promise<ServiceContentResponse> => {
   const apolloClient = getApolloClient()
-
-  try {
-    const { data } = await apolloClient.query<ServiceContentResponse>({
-      query: parse(`
-          query {
-            provision(content_id: "${contentId}") {
-              id
-              title
-              type
-              description
-              cover
-              url
-              created_at
-              allow_download
-              is_embeddable
-              format
-              bytes
-              total_likes
-              metadata
-            }
+  const response = await apolloClient.query<ServiceContentResponse>({
+    query: parse(`
+        query {
+          provision(content_id: "${contentId}") {
+            id
+            title
+            type
+            description
+            cover
+            url
+            created_at
+            allow_download
+            is_embeddable
+            format
+            bytes
+            total_likes
+            metadata
           }
-        `),
-    })
+        }
+      `),
+  })
 
-    return data.provision
-  } catch (error) {
-    return null
-  }
+  return response.data
 }

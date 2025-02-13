@@ -24,7 +24,11 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  css: ['primeflex/primeflex.css'],
+  css: [
+    'primevue/resources/themes/saga-blue/theme.css',
+    'primevue/resources/primevue.min.css',
+    'primeicons/primeicons.css',
+  ],
 
   plugins: [
     '@/plugins/appolo-graphQL.ts',
@@ -36,7 +40,7 @@ export default {
 
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
 
-  modules: ['primevue/nuxt', '@nuxtjs/apollo'],
+  modules: ['primevue/nuxt', '@nuxtjs/apollo', 'nuxt-sweetalert2'],
   apollo: {
     clientConfigs: {
       default: {
