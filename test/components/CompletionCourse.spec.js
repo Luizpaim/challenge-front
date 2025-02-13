@@ -1,7 +1,6 @@
 import { nextTick } from 'vue'
-import CompletionCourse from '@/components/CompletionCourse.vue' // ajuste o caminho conforme necessário
+import CompletionCourse from '@/components/CompletionCourse.vue'
 
-// Stub de dados fake para substituir o contentsHardcode
 jest.mock('@/utils/contents-hardcode', () => [
   {
     id: '1',
@@ -27,16 +26,13 @@ jest.mock('@/utils/contents-hardcode', () => [
   },
 ])
 
-// Cria um mock para o store
-
 jest.mock('@/store/content', () => {
   return () => ({
     loadByIdContent: jest.fn().mockResolvedValue(),
-    contentById: { value: null }, // não precisa ser reativo para o teste
+    contentById: { value: null },
   })
 })
 
-// Stubs para os componentes externos
 const LevelProgressStub = {
   name: 'LevelProgress',
   template: '<div class="level-progress-stub"></div>',
@@ -70,9 +66,6 @@ describe('CompletionCourse.vue', () => {
       },
     })
 
-    // Aguarda a resolução de promessas pendentes e a execução do onMounted
-
-    // O primeiro item possui id '1'
     expect(loadByIdContentMock).toHaveBeenCalledWith('1')
   })
 
@@ -87,7 +80,6 @@ describe('CompletionCourse.vue', () => {
       },
     })
 
-    // Verifica se os stubs de CardProgress renderizam os textos esperados
     const html = wrapper.html()
     expect(html).toContain('Conteúdo 1 - Descrição 1')
     expect(html).toContain('Conteúdo 2 - Descrição 2')
@@ -104,11 +96,6 @@ describe('CompletionCourse.vue', () => {
       },
     })
 
-    // Como o template renderiza:
-    // <div v-for="item in contents" :key="item.id" @click="loadByIdContent(item.id)">
-    //   <CardProgress ... />
-    // </div>
-    // Procuramos o <div> que contenha o texto referente ao segundo conteúdo
     const itemDiv = wrapper
       .findAll('div')
       .find((div) => div.text().includes('Conteúdo 2 - Descrição 2'))
@@ -129,11 +116,9 @@ describe('CompletionCourse.vue', () => {
       },
     })
 
-    // Verifica os conteúdos iniciais
     expect(wrapper.html()).toContain('Conteúdo 1 - Descrição 1')
     expect(wrapper.html()).toContain('Conteúdo 2 - Descrição 2')
 
-    // Força a atualização: adiciona um novo conteúdo
     const novoConteudo = {
       id: '3',
       title: 'Conteúdo 3',
@@ -146,8 +131,6 @@ describe('CompletionCourse.vue', () => {
       created_at: '2025-02-15',
     }
 
-    // Como "contents" é um ref interno (acessível via wrapper.vm.contents),
-    // adicionamos um novo item e forçamos a atualização com nextTick.
     wrapper.vm.contents.push(novoConteudo)
     await nextTick()
 
