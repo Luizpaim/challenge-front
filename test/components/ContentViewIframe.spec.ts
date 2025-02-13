@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 import ContentViewIframe from '@/components/ContentViewIframe.vue'
 
 describe('ContentViewIframe.vue', () => {
-  it('deve renderizar corretamente o iframe quando não é PDF', async () => {
+  it('should correctly render the iframe when it is not PDF', async () => {
     const wrapper = mount(ContentViewIframe)
 
     await wrapper.setProps({
@@ -20,7 +20,7 @@ describe('ContentViewIframe.vue', () => {
     expect(contentLink.exists()).toBe(false)
   })
 
-  it('deve renderizar corretamente a descrição e o botão de download quando é um PDF', async () => {
+  it('should correctly render the description and download button when it is a PDF', async () => {
     const wrapper = mount(ContentViewIframe)
 
     await wrapper.setProps({

@@ -1,20 +1,19 @@
 <script lang="ts">
-import ImagePreview from 'primevue/imagepreview/ImagePreview'
-
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: {
-    ImagePreview,
-  },
   props: {
-    url: String,
+    url: {
+      type: String,
+      required: true,
+    },
   },
 })
 </script>
 <template>
   <div class="content-image">
-    <ImagePreview
+    <PImagePreview
+      v-if="url"
       :key="url"
       class="image-preview"
       :src="url"

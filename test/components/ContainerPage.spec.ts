@@ -15,7 +15,7 @@ vi.mock('@/components/CompletionCourse.vue', () => ({
 }))
 
 describe('ContainerPage.vue', () => {
-  it('deve renderizar corretamente sem dependências', () => {
+  it('should render correctly without dependencies', () => {
     const wrapper = mount(ContainerPage)
 
     expect(wrapper.exists()).toBe(true)

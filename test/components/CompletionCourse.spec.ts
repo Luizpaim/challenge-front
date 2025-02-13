@@ -46,11 +46,11 @@ describe('CompletionCourse.vue', () => {
     })
   })
 
-  it('renderiza corretamente', () => {
+  it('renders correctly', () => {
     expect(wrapper.exists()).toBe(true)
   })
 
-  it('exibe a lista de conteúdos', () => {
+  it('displays the list of contents', () => {
     const items = wrapper.findAllComponents(CardProgress)
     expect(items.length).toBe(1)
   })

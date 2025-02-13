@@ -1,14 +1,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Button from 'primevue/button/Button'
 
 export default defineComponent({
-  components: {
-    ButtonCustom: Button,
-  },
   props: {
-    url: String,
-    description: String,
+    url: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
   },
 })
 </script>
@@ -19,7 +21,7 @@ export default defineComponent({
     </span>
 
     <a :href="url" target="_blank">
-      <ButtonCustom link label="Acessar Link" />
+      <PButton link label="Acessar Link" />
     </a>
   </div>
 </template>
