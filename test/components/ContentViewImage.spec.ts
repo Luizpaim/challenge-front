@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import ContentViewImage from '@/components/ContentViewImage.vue'
+import ContentViewImage from '../../src/components/ContentViewImage.vue'
 
 describe('ContentViewImage.vue', () => {
   it('should correctly render the image when the URL is set', async () => {

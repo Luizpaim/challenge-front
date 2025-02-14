@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import { describe, it, expect } from 'vitest'
-import HeaderCourse from '@/components/HeaderCourse.vue'
+import { describe, it, expect, vi } from 'vitest'
+import HeaderCourse from '../../src/components/HeaderCourse.vue'
 
-vi.mock('@/components/TitlePage.vue', () => ({
+vi.mock('../../src/components/TitlePage.vue', () => ({
   default: {
     template: '<div data-test="mock-header-course">Mock TitlePage</div>',
   },

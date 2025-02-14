@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import ContentViewLink from '@/components/ContentViewLink.vue'
+import ContentViewLink from '../../src/components/ContentViewLink.vue'
 
 describe('ContentViewLink.vue', () => {
   it('should correctly render the description and link access button', async () => {

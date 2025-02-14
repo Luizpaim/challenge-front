@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { vi } from 'vitest'
-import LevelProgress from '@/components/LevelProgress.vue'
+import LevelProgress from '../../src/components/LevelProgress.vue'
 
 describe('LevelProgress.vue', () => {
   beforeEach(() => {

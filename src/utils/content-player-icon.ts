@@ -3,4 +3,5 @@ export default {
   image: 'pi pi-image',
   pdf: 'pi pi-file-pdf',
   link: 'pi pi-link',
+  txt: 'pi pi-file-word',
 }
