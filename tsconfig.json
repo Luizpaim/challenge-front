@@ -4,7 +4,7 @@
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
-    "types": ["jest", "node"],
+    "types": ["jest", "node", "vitest"],
     "allowJs": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
@@ -13,6 +13,6 @@
       "@/*": ["src/*"]
     }
   },
-  "exclude": ["node_modules", "dist"],
-  "include": ["types/**/*.d.ts", "src/**/*.ts", "src/**/*.vue"]
+  "exclude": ["node_modules", "dist", "test"],
+  "include": ["types/**/*.d.ts", "src/**/*.ts", "src/**/*.vue", "test/**/*.ts"]
 }

@@ -2,11 +2,11 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { ref } from 'vue'
-import CompletionCourse from '@/components/CompletionCourse.vue'
-import LevelProgress from '@/components/LevelProgress.vue'
-import CardProgress from '@/components/CardProgress.vue'
-import { useContentStore } from '@/store/content'
-import contentsHardcode from '@/utils/contents-hardcode'
+import CompletionCourse from '../../src/components/CompletionCourse.vue'
+import LevelProgress from '../../src/components/LevelProgress.vue'
+import CardProgress from '../../src/components/CardProgress.vue'
+import { useContentStore } from '../../src/store/content'
+import contentsHardcode from '../../src/utils/contents-hardcode'
 
 vi.mock('primevue/scrollpanel', () => ({
   default: {
@@ -20,7 +20,7 @@ vi.mock('primevue/button', () => ({
   },
 }))
 
-vi.mock('@/store/content', () => {
+vi.mock('../../src/store/content', () => {
   return {
     useContentStore: () => ({
       loadByIdContent: vi.fn(),
@@ -35,7 +35,7 @@ describe('CompletionCourse.vue', () => {
 
   beforeEach(() => {
     mockStore = useContentStore()
-    wrapper = mount(CompletionCourse, {
+    wrapper = mount(CompletionCourse as any, {
       global: {
         components: { LevelProgress, CardProgress },
       },

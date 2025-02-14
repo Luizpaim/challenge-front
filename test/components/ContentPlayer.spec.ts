@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils'
 import { vi } from 'vitest'
 import { ref } from 'vue'
-import { useContentStore } from '@/store/content'
-import ContentPlayer from '@/components/ContentPlayer.vue'
-import ContentViewImage from '@/components/ContentViewImage.vue'
-import ContentViewIframe from '@/components/ContentViewIframe.vue'
-import ContentViewLink from '@/components/ContentViewLink.vue'
+import { useContentStore } from '../../src/store/content'
+import ContentPlayer from '../../src/components/ContentPlayer.vue'
+import ContentViewImage from '../../src/components/ContentViewImage.vue'
+import ContentViewIframe from '../../src/components/ContentViewIframe.vue'
+import ContentViewLink from '../../src/components/ContentViewLink.vue'
 
-vi.mock('@/store/content', () => {
+vi.mock('../../src/store/content', () => {
   const contentById = ref({ title: '', type: '' })
 
   return {

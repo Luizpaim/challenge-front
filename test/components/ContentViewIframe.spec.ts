@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import ContentViewIframe from '@/components/ContentViewIframe.vue'
+import ContentViewIframe from '../../src/components/ContentViewIframe.vue'
 
 describe('ContentViewIframe.vue', () => {
   it('should correctly render the iframe when it is not PDF', async () => {

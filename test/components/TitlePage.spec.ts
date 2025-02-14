@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils'
 import { nextTick, ref } from 'vue'
 import { vi } from 'vitest'
-import TitlePage from '@/components/TitlePage.vue'
-import { useContentStore } from '@/store/content'
+import TitlePage from '../../src/components/TitlePage.vue'
+import { useContentStore } from '../../src/store/content'
 
-vi.mock('@/store/content', () => {
+vi.mock('../../src/store/content', () => {
   const contentById = ref({ title: '', type: '' })
 
   return {

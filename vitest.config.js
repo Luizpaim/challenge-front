@@ -14,17 +14,22 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './test/setup.ts',
     deps: {
-      inline: [/primevue/], // Transforma todos os arquivos do PrimeVue
+      inline: [/primevue/],
     },
     transformMode: {
-      web: [/primevue/], // Garante que PrimeVue seja transformado corretamente
+      web: [/primevue/],
     },
     coverage: {
-      provider: 'c8', // Usa 'c8' para cobertura
-      reporter: ['text', 'json', 'html'], // Gera diferentes formatos de cobertura
-      all: true, // Garante que todos os arquivos sejam cobertos
-      include: ['components/**/*.vue', 'pages/**/*.vue', 'store/**/*.js'], // Define quais arquivos serão analisados
-      exclude: ['node_modules', 'test/**/*', '.nuxt/**/*'], // Exclui arquivos irrelevantes
+      provider: 'c8',
+      reporter: ['text', 'json', 'html'],
+      all: true,
+      include: [
+        'components/**/*.vue',
+        'pages/**/*.vue',
+        'store/**/*.ts',
+        'services/**/*.js',
+      ],
+      exclude: ['node_modules', 'test/**/*', '.nuxt/**/*'],
     },
   },
 })
